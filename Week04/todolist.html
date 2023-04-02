@@ -22,6 +22,7 @@
         align-items: stretch;
         width: 100%;
         padding: 30px 20px;
+        box-sizing: border-box;
       }
 
       #item {
@@ -37,15 +38,22 @@
       #add {
         margin-left: -6px;
         position: relative;
-        
+        cursor: pointer;
         width:16%;
         height: 40px;
         border: 1px solid transparent;
         border-radius: 5px;
         font-size: 15px;
-        background-color: #0d75ec;
+        background-color: #0d6efd;
+        border-color: #0d6efd;
         color: white;
         outline: none;
+      }
+
+      #add:hover {
+        color: #000;
+        text-decoration: none;
+        opacity: 0.75;
       }
 
       .listitem {
@@ -60,6 +68,11 @@
         margin-left: -40px;
       }
 
+      .listitem:hover {
+        color: #664d03;
+        background-color: #e6dbb9;
+      }
+
       .btn-close {
         box-sizing: content-box;
         width: 1em;
@@ -70,6 +83,7 @@
         opacity: 0.5;
         background-color: black;
         float: right;
+        cursor: pointer;
       }
 
     </style>
@@ -85,11 +99,11 @@
         let xbtn = document.createElement('button');
 
 
-       
+
         listitem.className = 'listitem'
 
         xbtn.className = 'btn-close';
-        
+
         // close 버튼에 이벤트 처리
         xbtn.onclick = function(e) {
           // 이벤트가 발생한 li 요소를 구해서 ul 요소에서 제거
@@ -99,7 +113,7 @@
         // li 요소 구성
         listitem.innerText = todo.value;
         listitem.appendChild(xbtn);
-        
+
         // ul 요소에 li 요소 추가
         list.appendChild(listitem);
 
@@ -110,7 +124,7 @@
     </script>
     <title>My ToDo App</title>    
   </head>
-  
+
   <body>
     <div class="container">
       <h1>My ToDo App</h1>
